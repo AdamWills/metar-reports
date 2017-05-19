@@ -47,6 +47,12 @@ describe('Metar Parsing', () =>  {
       assert.equal('KT', metar.parse(examples[1]).windInfo.unit);
       assert.equal('MPS', metar.parse(examples[2]).windInfo.unit);
     });
+
+    it('should normalize the speed', () => {
+      assert.equal(23, metar.parse(examples[0]).windInfo.normalizedSpeed);
+      assert.equal(16, metar.parse(examples[1]).windInfo.normalizedSpeed);
+      assert.equal(100, metar.parse(examples[2]).windInfo.normalizedSpeed);
+    });
   });
 
 });
