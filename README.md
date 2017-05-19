@@ -27,5 +27,5 @@ In the end, I have a script that generates random report data (based on the crit
 ## Considerations for production
 For this application to hit production, streaming the data in to the application would be a must. Also, memory profiling would need to be considered (my performance experience is mostly on the client side).
 
-## Additional git statNotes
+## Additional Notes
 1. In the Example Reports, the 3rd option 'FR 110232Z 001100G121MPS' contains 3 digits after the 'G', but the formatting guidelines specify 2. Standing by the guidelines and ignoring the 3rd digit, but of course, would want to verify in a real world scenario.
