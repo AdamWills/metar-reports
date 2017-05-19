@@ -12,7 +12,7 @@ exports.parse = (line) => {
   // calculate the individual pieces
   const direction = windInfoRaw.match(/^\d{3}/g)[0];
   const unit = windInfoRaw.match(/KT$|MPS$/g)[0];
-  const speed = /^\d{3}(\d{2,3})/g.exec(windInfoRaw)[1];
+  const speed = parseInt(/^\d{3}(\d{2,3})/g.exec(windInfoRaw)[1]);
   const gusts = windInfoRaw.includes('G') ? /G(\d{2})/g.exec(windInfoRaw)[1] : null;
   const normalizedSpeed = ('KT' === unit) ? (speed / 2) : speed;
 
