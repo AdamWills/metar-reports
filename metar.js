@@ -1,19 +1,12 @@
 exports.parse = (line) => {
-  // match the first 2-3 letters
-  const ICAO = line.match(/^[a-zA-Z]{2,3}/g);
-  
-  // pull out the timestamp. not doing more parsing from here, as we're
-  // currently not doing anything with the time.
-  const timestamp = /\s(\d{6})Z/g.exec(line)[1];
+  const parsedData = /(^[a-zA-Z]{2,3})\s(\d{6})Z\s(\d{3})(\d{2,3})(G\d{2,3})?(KT$|MPS$)/g.exec(line);
 
-  // parse the raw wind information to start
-  const windInfoRaw = /\dZ\s(\S*)/g.exec(line)[1];
-  
-  // calculate the individual pieces
-  const direction = windInfoRaw.match(/^\d{3}/g)[0];
-  const unit = windInfoRaw.match(/KT$|MPS$/g)[0];
-  const speed = parseInt(/^\d{3}(\d{2,3})/g.exec(windInfoRaw)[1]);
-  const gusts = windInfoRaw.includes('G') ? /G(\d{2})/g.exec(windInfoRaw)[1] : null;
+  const ICAO = parsedData[1];
+  const timestamp = parsedData[2];
+  const direction = parseInt(parsedData[3]);
+  const speed = parseInt(parsedData[4]);
+  const gusts = (parsedData[5]) ? parseInt(parsedData[5].replace('G','')) : null;
+  const unit = parsedData[6];
   const normalizedSpeed = ('KT' === unit) ? (speed / 2) : speed;
 
   const windInfo = {

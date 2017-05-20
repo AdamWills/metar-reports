@@ -2,7 +2,6 @@ const assert = require('assert');
 const metar = require('../metar');
 const examples = ['YYZ 122201Z 12023MPS', 'LAX 022355Z 09332G78KT', 'FR 110232Z 001100G121MPS'];
 
-
 describe('Metar Parsing', () =>  {
   describe('# ICAO Code', () => {
 
@@ -39,7 +38,7 @@ describe('Metar Parsing', () =>  {
     it('should pull the gusts', () => {
       assert.equal(null, metar.parse(examples[0]).windInfo.gusts);
       assert.equal(78, metar.parse(examples[1]).windInfo.gusts);
-      assert.equal(12, metar.parse(examples[2]).windInfo.gusts);
+      assert.equal(121, metar.parse(examples[2]).windInfo.gusts);
     });
 
     it('should pull the unit', () => {
