@@ -39,4 +39,4 @@ Creating a build process to incorporate css and js processing would be a must to
 I would also start on some custom theming (rather than just using default Bootstrap) - adding colours, feeling, etc. 
 
 ## Additional Notes
-1. In the Example Reports, the 3rd option 'FR 110232Z 001100G121MPS' contains 3 digits after the 'G', but the formatting guidelines specify 2. Taking into account the 3 possibility of 3 digits, but would want to verify the guidelines with the data.
+1. In the Example Reports, the 3rd option 'FR 110232Z 001100G121MPS' contains 3 digits after the 'G', but the formatting guidelines specify 2. Taking into account the possibility of 3 digits, but would want to verify the guidelines with the data.
