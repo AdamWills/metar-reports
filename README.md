@@ -28,6 +28,9 @@ Data processing is always important - so I took a TDD approach to parsing the da
 ### Reading data in real time
 After starting with a solution that outputted 200,000 records to a file and parsing it, I wanted to push a little further and actually make a real time dashboard. Using Vue.js (I've been personally interested in playing around more with this), socket.io, and a local express server, I was able to generate data (limited to 1 record per second) and get the results of the data into a basic table, along with the last 10 records that were processed.
 
+### Reading the data from a file
+Pretty straight forward process here - read a file line by line, processing each result. Generate some basic output.
+
 ### Where I would take the project from here
 If I were to spend more time on this, I would be focused on the dashboard visual experience. While the table is fine for basic output, I would want to explore the importance of the various pieces of data to understand what meaning each piece had and give some improved visualizations of the data (whether it's a streaming line graph, a bar graph that compares the various airports, etc).
 
