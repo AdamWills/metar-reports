@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "start": "node recordCreator.js 200000 > records.txt && node ./index.js"
+    "start": "open http://localhost:3000 && node server.js"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,9 @@
   },
   "dependencies": {
     "add-zero": "^1.0.0",
+    "express": "^4.15.3",
     "line-by-line": "^0.1.5",
-    "randomstring": "^1.1.5"
+    "randomstring": "^1.1.5",
+    "socket.io": "^2.0.1"
   }
 }
