@@ -13,11 +13,11 @@ Submission by Adam Wills
 ### Live streaming data
 1. `npm start`
 
+This will open up a web browser, start generating records, parsing and displaying data in real time
+
 ### Generate codes and read from file
 1. `npm run generate [number of records to generate]`
 2. `npm run read`
-
-This will open up a web browser, start generating records, parsing and displaying data in real time
 
 ## Breaking down the solution
 This exercise was broken down into two parts - parsing and processing data; and viewing the data in real time
