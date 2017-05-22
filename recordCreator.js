@@ -1,7 +1,8 @@
 // file to randomly generate records to be processed
 
 const rs = require('randomstring'),
-      addZero = require('add-zero');
+      addZero = require('add-zero'),
+      fs = require('fs');
 
 // random number generator
 function getRandomInt(min, max) {
@@ -39,4 +40,20 @@ exports.generateRecord = () => {
 
     resolve(ICAO + ' ' + timestamp + ' ' + windInfo);
   });
+}
+
+exports.generateRecords = ( number ) => {
+  const recordWriter = fs.createWriteStream('report.txt');
+  for (let index = 0; index < number; index++) {
+    this.generateRecord()
+      .then(record => {
+        recordWriter.write(record + '\n');
+        if (index === number) {
+          recordWriter.end();
+        }
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
 }

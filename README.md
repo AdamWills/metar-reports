@@ -9,7 +9,13 @@ Submission by Adam Wills
 ## Getting started
 
 1. `npm install`
-2. `npm start`
+
+### Live streaming data
+1. `npm start`
+
+### Generate codes and read from file
+1. `npm run generate [number of records to generate]`
+2. `npm run read`
 
 This will open up a web browser, start generating records, parsing and displaying data in real time
 
