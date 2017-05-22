@@ -7,6 +7,7 @@
         <meta name="description" content="METAR demo">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+        <link rel="stylesheet" href="/css/style.css">
 
     </head>
     <body>
@@ -17,21 +18,21 @@
                 <h1 class="text-center">METAR data</h1>
             </div>
         </div>
-        <div id="app" class="container-fluid">
+        <div id="app" class="container">
             <div class="row">
-                <div class="col-md-9">
-                    <table id="airportTable" class="table">
+                <div class="col-md-8">
+                    <table id="airportTable" class="table table-border">
                         <thead>
                             <tr>
-                                <th scope="row">Airport</th>
-                                <th scope="row">Average Windspeed (MPS)</th>
-                                <th scope="row">Current Windspeed (MPS)</th>
-                                <th scope="row">Number of records</th>
+                                <th scope="col">Airport</th>
+                                <th scope="col">Avg Windspeed (MPS)</th>
+                                <th scope="col">Current Windspeed (MPS)</th>
+                                <th scope="col">Number of records</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr v-for="(data, key) in airportData">
-                                <td>{{ key }}</td>
+                                <th scope="row">{{ key }}</th>
                                 <td>{{ data.averageWindSpeed }}</td>
                                 <td>{{ data.currentWindSpeed }}</td>
                                 <td>{{ data.count }}</td>
@@ -39,16 +40,17 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="col-md-3">
+                <div class="col-md-4 sidebar">
                     <h2 class="h5">Last 10 records processed</h2>
                     <ul id="lastRecordList">
-                        <li v-for="record in records">
-                            {{ record }}
-                        </li>
+                        <li v-for="record in records">{{ record }}</li>
                     </ul>
                 </div> <!-- end of sidebar column -->
             </div><!-- end of row -->
         </div><!-- end of container -->
+        <footer>
+            Developed by <a href="https://github.com/adamWills/">Adam Wills</a>
+        </footer>
         
         <script src="/socket.io/socket.io.js"></script>
         <script src="https://unpkg.com/vue"></script>

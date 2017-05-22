@@ -1,0 +1,46 @@
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#app {
+  flex: 1;
+}
+
+.jumbotron {
+  background: #ffc918;
+  border-radius: 0;
+}
+
+.jumbotron h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.table th {
+  background: #ffc918;
+  font-weight: 700;
+}
+
+.table td {
+  text-align: center;
+}
+
+.sidebar h2 {
+  background: #ffc918;
+  padding: 0.75rem;
+  font-weight: 700;
+}
+
+footer {
+  background: #ffc918;
+  padding: 2rem 0;
+  text-align: center;
+}
+
+footer a {
+  text-decoration: underline;
+  color: #292b2c;
+  font-weight: 500;
+}
