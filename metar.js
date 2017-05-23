@@ -1,5 +1,10 @@
 exports.parse = (line) => {
+
+  if (!line) return null;
+
   const parsedData = /(^[a-zA-Z]{2,3})\s(\d{6})Z\s(\d{3})(\d{2,3})(G\d{2,3})?(KT$|MPS$)/g.exec(line);
+
+  if (!parsedData) return null;
 
   const ICAO = parsedData[1];
   const timestamp = parsedData[2];

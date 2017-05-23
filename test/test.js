@@ -3,6 +3,22 @@ const metar = require('../metar');
 const examples = ['YYZ 122201Z 12023MPS', 'LAX 022355Z 09332G78KT', 'FR 110232Z 001100G121MPS'];
 
 describe('Metar Parsing', () =>  {
+
+  describe('Error catching', () => {
+    it('should gracefully fail with no data', () => {
+      assert.equal(null, metar.parse());
+      assert.equal(null, metar.parse(''));
+    });
+
+    it('should gracefully fail with improper data', () => {
+      assert.equal(null, metar.parse('YYZ'));
+      assert.equal(null, metar.parse('YYZ 22201 12023MPS'));
+      assert.equal(null, metar.parse('YYZ22201Z12023MPS'));
+      assert.equal(null, metar.parse('YYZ 122201Z 12023ERR'));
+    });
+
+  })
+
   describe('# ICAO Code', () => {
 
     it('should parse three letters ', () => {

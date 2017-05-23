@@ -13,6 +13,8 @@ lr.on('error', function (err) {
 
 lr.on('line', function (line) {
   const record = metar.parse(line);
+
+  if (!record) return;
   
   if (!airports[record.ICAO]) {
     airports[record.ICAO] = {};
