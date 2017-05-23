@@ -34,9 +34,10 @@ body {
 }
 
 footer {
-  background: #ffc918;
-  padding: 2rem 0;
+  background: #cdd0d6;
+  padding: 1rem 0;
   text-align: center;
+  margin-top: 2rem;
 }
 
 footer a {
